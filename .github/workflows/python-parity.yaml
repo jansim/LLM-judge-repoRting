@@ -1,0 +1,43 @@
+# Regenerates the reference values with the Python package and checks that
+# the committed fixtures are up to date. The scheduled run tests against the
+# latest upstream version to detect behavioural changes in the Python package.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+name: python-parity
+
+permissions: read-all
+
+env:
+  UPSTREAM_REPO: https://github.com/UW-Madison-Lee-Lab/LLM-judge-reporting.git
+  UPSTREAM_PINNED_REF: 082884d075188bed2f2645234fa2cc3050a517c5
+
+jobs:
+  python-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install the Python package
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            ref=HEAD
+          else
+            ref=$UPSTREAM_PINNED_REF
+          fi
+          pip install "git+${UPSTREAM_REPO}@${ref}"
+
+      - name: Regenerate reference values
+        run: python data-raw/generate_reference_values.py
+
+      - name: Check fixtures are unchanged
+        run: git diff --exit-code tests/testthat/fixtures

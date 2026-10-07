@@ -1,0 +1,11 @@
+url: https://jansim.github.io/LLM-judge-repoRting/
+template:
+  bootstrap: 5
+reference:
+  - title: Estimation
+    contents:
+      - point_estimator
+      - confidence_interval
+  - title: Study design
+    contents:
+      - allocate_calibration_sample

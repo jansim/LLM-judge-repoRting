@@ -1,0 +1,33 @@
+Package: llmjudgereporting
+Title: Correctly Report LLM-as-a-Judge Evaluations
+Version: 0.1.0
+Authors@R: c(
+    person("Jan", "Simson", email = "claude@simson.io", role = c("aut", "cre")),
+    person("Chungpa", "Lee", role = "aut",
+           comment = "Author of the original Python package"),
+    person("Thomas", "Zeng", role = "aut",
+           comment = "Author of the original Python package"),
+    person("Jongwon", "Jeong", role = "aut",
+           comment = "Author of the original Python package"),
+    person("Jy-yong", "Sohn", role = "aut",
+           comment = "Author of the original Python package"),
+    person("Kangwook", "Lee", role = "aut",
+           comment = "Author of the original Python package")
+  )
+Description: An R port of the 'llm_judge_reporting' Python package
+    accompanying Lee et al. (2025) <doi:10.48550/arXiv.2511.21140>. Corrects
+    the bias of accuracy estimates obtained from an imperfect LLM judge using
+    its estimated specificity and sensitivity, constructs confidence intervals
+    that reflect uncertainty from both the test and the calibration data, and
+    allocates a calibration budget between truly incorrect and truly correct
+    items.
+License: MIT + file LICENSE
+URL: https://github.com/jansim/LLM-judge-repoRting
+BugReports: https://github.com/jansim/LLM-judge-repoRting/issues
+Depends: R (>= 3.5.0)
+Imports: stats
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1

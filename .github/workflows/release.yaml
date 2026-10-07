@@ -1,0 +1,48 @@
+# Builds the source package for a version tag (e.g. v0.1.0) and attaches it to
+# a GitHub release.
+on:
+  push:
+    tags: ['v*']
+
+name: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+
+      - name: Check version matches tag
+        run: |
+          version=$(grep '^Version:' DESCRIPTION | sed 's/Version: *//')
+          if [ "v${version}" != "${GITHUB_REF_NAME}" ]; then
+            echo "DESCRIPTION version (${version}) does not match tag (${GITHUB_REF_NAME})"
+            exit 1
+          fi
+
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          args: 'c("--no-manual", "--as-cran")'
+          error-on: '"warning"'
+
+      - name: Build source package
+        run: R CMD build .
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: llmjudgereporting_*.tar.gz
+          generate_release_notes: true
