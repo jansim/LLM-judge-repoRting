@@ -1,4 +1,4 @@
-Package: llmjudgereporting
+Package: llmJudgeReporting
 Title: Correctly Report LLM-as-a-Judge Evaluations
 Version: 0.1.0
 Authors@R: c(

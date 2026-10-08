@@ -4,5 +4,5 @@
 .Ruserdata
 docs/
 *.Rcheck/
-llmjudgereporting_*.tar.gz
+llmJudgeReporting_*.tar.gz
 __pycache__/

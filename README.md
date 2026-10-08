@@ -1,4 +1,4 @@
-# llmjudgereporting
+# llmJudgeReporting
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/jansim/LLM-judge-repoRting/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jansim/LLM-judge-repoRting/actions/workflows/R-CMD-check.yaml)
@@ -58,7 +58,7 @@ Differences from the Python package, following R conventions:
 Point estimate and confidence interval:
 
 ```r
-library(llmjudgereporting)
+library(llmJudgeReporting)
 
 p <- 0.4; n <- 1000
 q0 <- 0.7; q1 <- 0.9; m0 <- 200; m1 <- 200

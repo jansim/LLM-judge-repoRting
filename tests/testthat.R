@@ -1,4 +1,4 @@
 library(testthat)
-library(llmjudgereporting)
+library(llmJudgeReporting)
 
-test_check("llmjudgereporting")
+test_check("llmJudgeReporting")

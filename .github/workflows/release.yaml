@@ -44,5 +44,5 @@ jobs:
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         with:
-          files: llmjudgereporting_*.tar.gz
+          files: llmJudgeReporting_*.tar.gz
           generate_release_notes: true
