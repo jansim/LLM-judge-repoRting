@@ -1,4 +1,4 @@
-# llmjudgereporting
+# llmJudgeReporting
 
 An R port of the Python package
 [`llm_judge_reporting`](https://github.com/UW-Madison-Lee-Lab/LLM-judge-reporting)
@@ -60,7 +60,7 @@ Point estimate and confidence interval:
 
 ``` r
 
-library(llmjudgereporting)
+library(llmJudgeReporting)
 
 p <- 0.4; n <- 1000
 q0 <- 0.7; q1 <- 0.9; m0 <- 200; m1 <- 200

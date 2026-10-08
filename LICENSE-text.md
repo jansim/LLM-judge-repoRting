@@ -1,4 +1,4 @@
 # License
 
     YEAR: 2026
-    COPYRIGHT HOLDER: llmjudgereporting authors
+    COPYRIGHT HOLDER: llmJudgeReporting authors

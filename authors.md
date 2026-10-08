@@ -25,11 +25,11 @@ Source:
 [`DESCRIPTION`](https://github.com/jansim/LLM-judge-repoRting/blob/main/DESCRIPTION)
 
 Simson J, Lee C, Zeng T, Jeong J, Sohn J, Lee K (2026).
-*llmjudgereporting: Correctly Report LLM-as-a-Judge Evaluations*. R
+*llmJudgeReporting: Correctly Report LLM-as-a-Judge Evaluations*. R
 package version 0.1.0, <https://github.com/jansim/LLM-judge-repoRting>.
 
     @Manual{,
-      title = {llmjudgereporting: Correctly Report LLM-as-a-Judge Evaluations},
+      title = {llmJudgeReporting: Correctly Report LLM-as-a-Judge Evaluations},
       author = {Jan Simson and Chungpa Lee and Thomas Zeng and Jongwon Jeong and Jy-yong Sohn and Kangwook Lee},
       year = {2026},
       note = {R package version 0.1.0},
